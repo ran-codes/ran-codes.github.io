@@ -1,19 +1,20 @@
 project:
   type: website
-
+  output-dir: docs
 website:
-  title: "te"
+  title: "Ran Li - Personal Site"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/ran-codes
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ran-li-6b722718/
       - icon: twitter
-        href: https://twitter.com
+        href: https://x.com/ran_codes
+      - text: "{{< iconify fa6-brands:bluesky >}}"
+        href: https://bsky.app/profile/ran-li.bsky.social
 format:
   html:
     theme: cosmo
     css: styles.css
-
-
-
