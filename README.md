@@ -1,6 +1,8 @@
 # Personal Site
 
-## Key Links:
+## Get Started 
 
-- ORCID: https://orcid.org/0000-0002-4699-4755
-- LinkedIn: https://www.linkedin.com/in/ran-li-6b722718/
+- This is a Quarto (v1.8.22 CLI) static site that builds into `docs/` folder as per the `_quarto.yml`; the build is done via CLI `quarto render`
+- GitHub pages will deploy based on changes in `docs/` folder
+
+
