@@ -6,3 +6,15 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# Format
+format:
+  html:
+    toc: true 
+    toc-depth: 2
+
+## Author
+author: 
+  - name: "Ran Li"
+    url: "https://ran-codes.github.io/"
+    orcid: "0000-0002-4699-4755"
