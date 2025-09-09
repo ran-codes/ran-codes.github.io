@@ -1,0 +1,189 @@
+---
+title: "Proof of Concept: Client-side Serverless DuckDB query of cloud bucket storages"
+date: "2025-09-09"
+categories: [news, code, analysis]
+image: "image.jpg"
+execute: 
+  warning: false
+  message: false
+---
+
+# Intro 
+
+This demonstrates a serverless analytics stack combining Static Site Generation (SSG) with cloud-hosted Parquet datasets via DuckDB WASM. This architecture enables lightweight, cost-effective deployment of static site front ends with integration to cloud data stroage (S3 or other databases) using client-side SQL processing via DuckDB WASM.
+
+**Use Cases:**
+
+- Interactive dashboards deployed to CDNs
+- Real-time analytics on static hosting (Netlify, Vercel, GitHub Pages)
+- Client-side data processing without API costs
+- Scalable data visualization with minimal infrastructure
+
+**Architecture Benefits:**
+
+- Zero server costs (static hosting only)
+- Automatic global CDN distribution
+- Direct cloud dataset access
+- Client-side SQL processing
+
+```{mermaid}
+%%{init: {'theme':'neutral'}}%%
+graph TB
+    subgraph " "
+        A[Dashboard Users] --> B[App Server<br/>$500/month]
+        B --> C[DuckDB Server]
+        C --> D[Cloud Storage<br/>$50/month]
+        E["Total: $550/month<br/>DevOps maintenance<br/>Manual scaling"]
+    end
+    
+    subgraph "  "
+        F[Dashboard Users] --> G[CDN<br/>$5/month]
+        G --> H[DuckDB WASM<br/>Runs in Browser]
+        H --> I[Cloud Storage<br/>$50/month]
+        J["Total: $55/month<br/>Auto-scaling<br/>Global CDN"]
+    end
+    
+    K[Same Data<br/>Same Queries<br/>Same Results] --> D
+    K --> I
+    
+    style H fill:#4CAF50,color:#000
+    style J fill:#E8F5E8,color:#000
+    style E fill:#FFEBEE,color:#000
+```
+
+# Data Source (Hugging Faces Parquet)
+
+We access Parquet files from Hugging Face, an open-science repository with ML-optimized APIs and CORS-enabled endpoints suitable for browser-based applications. However this workflow works with any storage provider (Azure, AWS, GCP, Hugging Face, etc.). We use Hugging Face because it's a gold standard open-science data repository that is performant and free.
+
+# Traditional Server-side Pattern (R/Python/Node.js running on server)
+
+We can query as we do normally working on a local or cloud comptuer that is running some server; in this case its R code but it could be any language the query syntax is native SQL. 
+
+```{r}
+library(duckdb); library(tidyverse)
+con <- dbConnect(duckdb())
+
+result <- dbGetQuery(con, "
+  SELECT * 
+  FROM 'https://huggingface.co/datasets/ran-codes/mtcars/resolve/refs%2Fconvert%2Fparquet/default/train/0000.parquet' 
+") |> as_tibble()
+
+result |> glimpse()
+
+dbDisconnect(con)
+```
+
+# Serverless/Client-side Pattern (WASM running in browser)
+
+DuckDB WASM enables SQL processing directly in browsers, eliminating server dependencies. Below is the serverless equivalent of the query from above.
+
+Let's first import DuckDB WASM from npm (Javascript package manager).
+
+```{ojs}
+// Import DuckDB WASM
+duckdb = import("https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.28.0/+esm")
+```
+
+Now we can set up our in browser DuckDB instance/connection. This is a bit more involved than the server-side version because we have to set up a web worker to run the database in a separate thread from the main browser UI thread.
+
+```{ojs}
+// Initialize with jsDelivr bundles (recommended approach)
+db = {
+  const JSDELIVR_BUNDLES = duckdb.getJsDelivrBundles();
+  const bundle = await duckdb.selectBundle(JSDELIVR_BUNDLES);
+
+  const worker_url = URL.createObjectURL(
+    new Blob([`importScripts("${bundle.mainWorker}");`], {type: 'text/javascript'})
+  );
+
+  const worker = new Worker(worker_url);
+  const logger = new duckdb.ConsoleLogger();
+  const db = new duckdb.AsyncDuckDB(logger, worker);
+  
+  await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+  URL.revokeObjectURL(worker_url);
+  
+  return db;
+}
+```
+
+Looks good. Now we can connect to the cloud data storage and run our query.
+
+
+```{ojs}
+// Query S3 Parquet using HTTPS URL
+wasmResult = {
+  const conn = await db.connect();
+  
+  try {
+    const result = await conn.query(`
+      SELECT * 
+     FROM 'https://huggingface.co/datasets/ran-codes/mtcars/resolve/refs%2Fconvert%2Fparquet/default/train/0000.parquet'  
+      LIMIT 5
+    `);
+    
+    return result.toArray().map(row => row.toJSON());
+    
+  } finally {
+    await conn.close();
+  }
+}
+```
+
+Looks like it worked. Lets print results
+
+```{ojs}
+wasmResult
+Inputs.table(wasmResult)
+```
+
+# Architecture Implications
+
+**Deployment Simplicity:**
+- Build once, deploy to any static host
+- No server provisioning or maintenance
+- Automatic scaling via CDN
+
+**Cost Efficiency:**
+- No compute costs (client-side processing)
+- No database hosting fees
+- Pay only for static hosting and data egress
+
+**Performance Characteristics:**
+- Initial WASM load overhead (~2-3MB)
+- Subsequent queries run locally
+- Optimal for <100MB datasets per query
+
+
+---
+
+# Appendix: CORS and Cloud Storage
+
+**CORS (Cross-Origin Resource Sharing)** controls browser access to cross-domain resources.
+
+**Why Hugging Face works:**
+- CORS headers allow browser access (`Access-Control-Allow-Origin: *`)
+- Optimized for ML/data science integration
+
+**For custom deployments:**
+
+**S3:**
+```json
+[{
+  "AllowedOrigins": ["https://yourapp.com"],
+  "AllowedMethods": ["GET", "HEAD"], 
+  "AllowedHeaders": ["*"],
+  "MaxAgeSeconds": 3000
+}]
+```
+
+**Azure Blob:**
+```json
+{
+  "allowedOrigins": ["https://yourapp.com"],
+  "allowedMethods": ["GET"],
+  "maxAgeInSeconds": 3600
+}
+```
+
+**Security note:** CORS controls browser access, not authentication. Use signed URLs or IAM policies for data security.
