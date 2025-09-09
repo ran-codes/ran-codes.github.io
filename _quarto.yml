@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs
+  output-dir: _site
 website:
   title: "Ran Li - Personal Site"
   navbar:
