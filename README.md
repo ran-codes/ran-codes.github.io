@@ -9,7 +9,7 @@
     - The end product is a GitHub pages site
     - The page is deployed by GitHub Actions using contents in the `docs/` folder
     - To build for production run `quarto render; cp -r _site/* docs/ -Force` in PowerShell (note different syntax for other OS), which renders into `_site/` then copies to `docs/`
-    - Pushing to main will trigger GitHub actions to deploy the site
+    - Pushing to branch and then merging main will trigger GitHub actions to deploy the site
 
 ## Folders
 
