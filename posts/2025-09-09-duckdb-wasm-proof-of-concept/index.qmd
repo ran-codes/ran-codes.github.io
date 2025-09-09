@@ -2,13 +2,13 @@
 title: "Proof of  Concept: Client-side Serverless DuckDB query of cloud bucket storages"
 date: "2025-09-09"
 categories: [serverless, data-engineering, wasm, duckdb, analytics, sql, parquet]
-image: "schematic-wasm-duckd-ssg.png"
+image: "schematic-wasm-duckd-ssg-2.png"
 execute: 
   warning: false
   message: false
 ---
 
-![](schematic-wasm-duckd-ssg.png){fig-align="center"}
+![](schematic-wasm-duckd-ssg-2.png){fig-align="center"}
 
 # Intro
 
