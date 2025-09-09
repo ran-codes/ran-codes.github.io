@@ -1,55 +1,32 @@
 ---
-title: "Proof of Concept: Client-side Serverless DuckDB query of cloud bucket storages"
+title: "Proof of  Concept: Client-side Serverless DuckDB query of cloud bucket storages"
 date: "2025-09-09"
-categories: [news, code, analysis]
-image: "image.jpg"
+categories: [serverless, data-engineering, wasm, duckdb, analytics, sql, parquet]
+image: "schematic-wasm-duckd-ssg.png"
 execute: 
   warning: false
   message: false
 ---
 
-# Intro 
+![](schematic-wasm-duckd-ssg.png){fig-align="center"}
+
+# Intro
 
 This demonstrates a serverless analytics stack combining Static Site Generation (SSG) with cloud-hosted Parquet datasets via DuckDB WASM. This architecture enables lightweight, cost-effective deployment of static site front ends with integration to cloud data stroage (S3 or other databases) using client-side SQL processing via DuckDB WASM.
 
 **Use Cases:**
 
-- Interactive dashboards deployed to CDNs
-- Real-time analytics on static hosting (Netlify, Vercel, GitHub Pages)
-- Client-side data processing without API costs
-- Scalable data visualization with minimal infrastructure
+-   Interactive dashboards deployed to CDNs
+-   Real-time analytics on static hosting (Netlify, Vercel, GitHub Pages)
+-   Client-side data processing without API costs
+-   Scalable data visualization with minimal infrastructure
 
 **Architecture Benefits:**
 
-- Zero server costs (static hosting only)
-- Automatic global CDN distribution
-- Direct cloud dataset access
-- Client-side SQL processing
-
-```{mermaid}
-%%{init: {'theme':'neutral'}}%%
-graph TB
-    subgraph " "
-        A[Dashboard Users] --> B[App Server<br/>$500/month]
-        B --> C[DuckDB Server]
-        C --> D[Cloud Storage<br/>$50/month]
-        E["Total: $550/month<br/>DevOps maintenance<br/>Manual scaling"]
-    end
-    
-    subgraph "  "
-        F[Dashboard Users] --> G[CDN<br/>$5/month]
-        G --> H[DuckDB WASM<br/>Runs in Browser]
-        H --> I[Cloud Storage<br/>$50/month]
-        J["Total: $55/month<br/>Auto-scaling<br/>Global CDN"]
-    end
-    
-    K[Same Data<br/>Same Queries<br/>Same Results] --> D
-    K --> I
-    
-    style H fill:#4CAF50,color:#000
-    style J fill:#E8F5E8,color:#000
-    style E fill:#FFEBEE,color:#000
-```
+-   Zero server costs (static hosting only)
+-   Automatic global CDN distribution
+-   Direct cloud dataset access
+-   Client-side SQL processing
 
 # Data Source (Hugging Faces Parquet)
 
@@ -57,7 +34,7 @@ We access Parquet files from Hugging Face, an open-science repository with ML-op
 
 # Traditional Server-side Pattern (R/Python/Node.js running on server)
 
-We can query as we do normally working on a local or cloud comptuer that is running some server; in this case its R code but it could be any language the query syntax is native SQL. 
+We can query as we do normally working on a local or cloud comptuer that is running some server; in this case its R code but it could be any language the query syntax is native SQL.
 
 ```{r}
 library(duckdb); library(tidyverse)
@@ -109,7 +86,6 @@ db = {
 
 Looks good. Now we can connect to the cloud data storage and run our query.
 
-
 ```{ojs}
 // Query S3 Parquet using HTTPS URL
 wasmResult = {
@@ -141,24 +117,23 @@ Inputs.table(wasmResult)
 
 **Deployment Simplicity:**
 
-- Build once, deploy to any static host
-- No server provisioning or maintenance
-- Automatic scaling via CDN
+-   Build once, deploy to any static host
+-   No server provisioning or maintenance
+-   Automatic scaling via CDN
 
 **Cost Efficiency:**
 
-- No compute costs (client-side processing)
-- No database hosting fees
-- Pay only for static hosting and data egress
+-   No compute costs (client-side processing)
+-   No database hosting fees
+-   Pay only for static hosting and data egress
 
 **Performance Characteristics:**
 
-- Initial WASM load overhead (~2-3MB)
-- Subsequent queries run locally
-- Optimal for <100MB datasets per query
+-   Initial WASM load overhead (\~2-3MB)
+-   Subsequent queries run locally
+-   Optimal for \<100MB datasets per query
 
-
----
+------------------------------------------------------------------------
 
 # Appendix: CORS and Cloud Storage
 
@@ -166,13 +141,14 @@ Inputs.table(wasmResult)
 
 **Why Hugging Face works:**
 
-- CORS headers allow browser access (`Access-Control-Allow-Origin: *`)
-- Optimized for ML/data science integration
+-   CORS headers allow browser access (`Access-Control-Allow-Origin: *`)
+-   Optimized for ML/data science integration
 
 **For custom deployments:**
 
 **S3:**
-```json
+
+``` json
 [{
   "AllowedOrigins": ["https://yourapp.com"],
   "AllowedMethods": ["GET", "HEAD"], 
@@ -182,7 +158,8 @@ Inputs.table(wasmResult)
 ```
 
 **Azure Blob:**
-```json
+
+``` json
 {
   "allowedOrigins": ["https://yourapp.com"],
   "allowedMethods": ["GET"],
