@@ -3,6 +3,8 @@ project:
   output-dir: _site
 website:
   title: "Ran Li - Personal Site"
+  site-url: "https://ranli.dev"
+  google-analytics: "G-PC0JG3M1ZX"
   navbar:
     right:
       - about.qmd
