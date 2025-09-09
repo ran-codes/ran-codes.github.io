@@ -140,16 +140,19 @@ Inputs.table(wasmResult)
 # Architecture Implications
 
 **Deployment Simplicity:**
+
 - Build once, deploy to any static host
 - No server provisioning or maintenance
 - Automatic scaling via CDN
 
 **Cost Efficiency:**
+
 - No compute costs (client-side processing)
 - No database hosting fees
 - Pay only for static hosting and data egress
 
 **Performance Characteristics:**
+
 - Initial WASM load overhead (~2-3MB)
 - Subsequent queries run locally
 - Optimal for <100MB datasets per query
@@ -162,6 +165,7 @@ Inputs.table(wasmResult)
 **CORS (Cross-Origin Resource Sharing)** controls browser access to cross-domain resources.
 
 **Why Hugging Face works:**
+
 - CORS headers allow browser access (`Access-Control-Allow-Origin: *`)
 - Optimized for ML/data science integration
 
