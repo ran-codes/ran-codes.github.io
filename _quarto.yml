@@ -2,20 +2,34 @@ project:
   type: website
   output-dir: _site
 website:
-  title: "Ran Li - Personal Site"
+  title: "Ran Li"
+  
   site-url: "https://ranli.dev"
   google-analytics: "G-PC0JG3M1ZX"
   navbar:
+    logo-href: index.qmd
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "Portfolio"
+        href: portfolio.qmd      
+      - text: "CV"
+        href: cv.qmd
+      - text: "About"
+        href: about.qmd
     right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/ran-codes
       - icon: linkedin
         href: https://www.linkedin.com/in/ran-li-6b722718/
-      - icon: twitter
-        href: https://x.com/ran_codes
+      - icon: github
+        href: https://github.com/ran-codes
       - text: "{{< iconify fa6-brands:bluesky >}}"
         href: https://bsky.app/profile/ran-li.bsky.social
+      - icon: twitter
+        href: https://x.com/ran_codes      
+      - icon: medium
+        href: https://medium.com/@ranli2011
 format:
   html:
     theme: cosmo

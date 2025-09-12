@@ -1,0 +1,21 @@
+# options specified here will apply to all posts in this folder
+
+# freeze computational output
+# (see https://quarto.org/docs/projects/code-execution.html#freeze)
+freeze: true
+
+# Enable banner style title blocks
+title-block-banner: true
+
+# Format
+format:
+  html:
+    toc: true 
+    toc-depth: 2
+    code-tools: true
+
+## Author
+author: 
+  - name: "Ran Li"
+    url: "https://ran-codes.github.io/"
+    orcid: "0000-0002-4699-4755"
