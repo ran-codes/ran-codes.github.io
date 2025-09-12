@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ranli.dev/posts/2025-09-09-duckdb-wasm-proof-of-concept/index.html</loc>
-    <lastmod>2025-09-09T20:12:36.754Z</lastmod>
+    <loc>https://ranli.dev/portfolio.html</loc>
+    <lastmod>2025-09-12T21:52:13.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ranli.dev/index.html</loc>
+    <lastmod>2025-09-12T21:44:15.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ranli.dev/blog.html</loc>
+    <lastmod>2025-09-12T21:54:03.771Z</lastmod>
   </url>
   <url>
     <loc>https://ranli.dev/about.html</loc>
     <lastmod>2025-07-21T19:28:41.632Z</lastmod>
   </url>
   <url>
-    <loc>https://ranli.dev/index.html</loc>
-    <lastmod>2025-09-02T20:29:57.610Z</lastmod>
+    <loc>https://ranli.dev/blog/2025-09-09-duckdb-wasm-proof-of-concept/index.html</loc>
+    <lastmod>2025-09-09T20:12:36.754Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ranli.dev/cv.html</loc>
+    <lastmod>2025-09-12T21:53:01.522Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ranli.dev/portfolio/test-1/index.html</loc>
+    <lastmod>2025-09-12T21:49:32.888Z</lastmod>
   </url>
 </urlset>
