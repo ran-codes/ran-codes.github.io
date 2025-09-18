@@ -7,7 +7,7 @@ website:
   site-url: "https://ranli.dev"
   google-analytics: "G-PC0JG3M1ZX"
   navbar:
-    logo-href: index.qmd
+    logo-href: /index.qmd
     left:
       - text: "Home"
         href: index.qmd
