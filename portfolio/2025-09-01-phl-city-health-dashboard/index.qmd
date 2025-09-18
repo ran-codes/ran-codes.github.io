@@ -55,23 +55,37 @@ Data Engineer (Others)
 ::: {.callout-note title="Data Scientist (Ran Li)"}
 
 
-- Develop  prototype (R Shiny)
-- Develop production application (Next.js)
-- Deploy production application (GH pages)
+- Developed prototype (R Shiny)
+- Developed production application (Next.js)
+- Deployed production application (GitHub Pages)
 - Deployed data preservation (Zenodo)
 :::
 :::
 
 :::
 
-## Technical Journey
+## Phases
 
 ### Phase 1: Tech Stack Design (March 2025)
 
-- Data preservation infrastructure (Zenodo integration)
-- Dashboard rapid prototyping with R Shiny (reuses Data Engineers code) but makes dynamic
-- Dashboard production requirements: no cold starts so serverless SSG with highly modern UI and visualizations: Next.js SSG
-- Production deployment given zero operating cost: GitHub Pages static site
+**Operational Constraints:**
+
+- Zero budget for infrastructure costs
+- 3-month delivery timeline
+- 5 hours/week development capacity
+- No ongoing maintenance resources
+
+**Architecture Decisions:**
+
+- **Data Preservation**: Zenodo integration for DOI/citation (free, permanent hosting)
+- **Prototyping**: R Shiny to reuse Data Engineers' code but make it dynamic
+- **Production Requirements**: No cold starts needed → serverless SSG with modern UI
+- **Frontend**: Next.js SSG for zero-cost hosting and instant loading
+- **Deployment**: GitHub Pages static site (free, reliable)
+- **Analytics**: Google Analytics for usage tracking (free)
+- **Performance**: Client-side rendering for serverless architecture
+- **Data Pipeline**: Custom R-to-web transformation (leverages existing analysis)
+- **SEO**: Search optimization for discoverability
 
 ### Phase 2: R Shiny Prototype (March-April 2025)
 
@@ -99,17 +113,21 @@ Production rebuild optimized for budget and operational constraints:
 
 **Production Infrastructure:**
 
-- **Deployment**: GitHub Pages static hosting (budget-optimized)
-- **Data Preservation**: Zenodo integration for DOI/citation
-- **Analytics**: Google Analytics tracking
-- **SEO**: Search optimization for discoverability
+- Embedded documentation and metadata
 
 ### Technical Highlights
 
-- Client-side rendering for serverless architecture
-- Custom data pipeline from R to web-ready formats
-- Production deployment designed for minimal operational overhead
+- Synchronized bar charts and choropleth maps
+- Custom Heat Vulnerability Index visualization
+- Interactive district selection with highlighting
 
-## Impact
+## Reflections
 
-Transforms Philadelphia health data into actionable policy insights through accessible, district-organized visualizations.
+### Things I really enjoyed
+
+Lightweight tech stacks like these bring me great joy. You can leverage mature and developer-friendly open-science/open-source infrastructure such as GitHub Pages, Zenodo, and fully serverless application frameworks like SSG Next.js. This removes so much maintenance and operational work you have to do to maintain a deliverable and allows you to free up the time to focus on what is important: the UI of the final product and having a deep understanding of the stakeholders' true needs.
+
+### Things to improve next time
+
+- A quick turnaround like this meant we did a one-off type of architecture
+- If this project continues, we will add interfaces for stakeholders to update data and modify metadata

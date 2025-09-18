@@ -36,6 +36,6 @@ about:
       
 ---
 
-Ran Li is a software engineer with 5+ years of experience spanning data architecture, data engineering, analytics engineering, cross-domain data integration, BI/dashboard development, front-end development, and serverless backend architecture.
+I am a software engineer with 5+ years of experience spanning data architecture, data engineering, analytics engineering, cross-domain data integration, BI/dashboard development, front-end development, and serverless backend architecture.
 
 I believe in agile, integrated solutions tailored to stakeholders' specific problems and implementing software-first approaches that are lightweight, scalable, and AI-compatible.
