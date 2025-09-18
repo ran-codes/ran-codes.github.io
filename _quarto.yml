@@ -17,6 +17,7 @@ website:
         href: portfolio.qmd      
       - text: "Resume"
         href: resume.pdf 
+        target: _blank
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/ran-li-6b722718/
