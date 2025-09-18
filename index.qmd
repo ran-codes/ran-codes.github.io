@@ -9,11 +9,14 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/ran-li-6b722718/
+      target: _blank
     - icon: github
       text: Github
       href: https://github.com/ran-codes
+      target: _blank
     - text: "{{< iconify fa6-brands:bluesky >}} Bluesky"
       href: https://bsky.app/profile/ran-li.bsky.social
+      target: _blank
     # - icon: twitter
     #   text: Twitter
     #   href: https://x.com/ran_codes
@@ -24,6 +27,11 @@ about:
     #   href: https://orcid.org/0000-0002-4699-4755
     - text: "{{< iconify fa7-brands:linktree >}} Linktree"
       href: https://linktr.ee/ran_li
+      target: _blank
+    - icon: file-earmark-person
+      text: "Resume"
+      href: /resume.pdf
+      target: _blank
 
       
 ---
