@@ -29,4 +29,4 @@ This is the blog posts folder. Each post is a separate `.qmd` file. The folder n
 
 ### Resume
 
-This is currently dated to 2025-09-18 version.
+This is currently dated to 2025-09-18 version. Note we edit resumes in https://www.junian.dev/markdown-resume/.
