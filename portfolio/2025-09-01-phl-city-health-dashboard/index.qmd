@@ -1,0 +1,106 @@
+---
+title: "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App"
+subtitle: "{{< iconify mdi:link-variant >}} [Dashboard](https://drexel-uhc.github.io/philadelphia-council-districts-and-health) &bull; {{< iconify fa6-brands:github >}} [GitHub](https://github.com/Drexel-UHC/philadelphia-council-districts-and-health)"
+date: "2025-09-01"
+categories: [Dashboard, R Shiny, Next.js, React.js, Highcharts.js]
+image: "image.png"
+execute: 
+  warning: false
+  message: false
+---
+
+
+[![{{< iconify mdi:link-variant >}} Click the Image to get to the dashboard at https://drexel-uhc.github.io/philadelphia-council-districts-and-health](image.png)](https://drexel-uhc.github.io/philadelphia-council-districts-and-health){fig-align="center"}
+
+## Context
+
+### Project 
+
+Philadelphia health disparities aren't connected to political geography, leaving council members without district-level insights for policy decisions.
+
+This deliverable is an interactive dashboard visualizing health determinants across 10 council districts, making public health data actionable for policy makers and citizens.
+
+### Team Structure
+
+
+::: {.grid}
+
+::: {.g-col-4}
+::: {.callout-note .custom-gray title="Data Engineers"}
+Tamara Rushovich, Amber Bolli
+
+- Aggregated census tract data to council district level
+- Created static visualizations with R/ggplot2
+- Provided text content and mockup of dashboard layout
+:::
+:::
+
+::: {.g-col-4}
+::: {.callout-note title="Data Architect (Ran Li)"}
+<span style="font-weight:bold; color:#1976d2;">Ran Li</span>
+
+- Tech stack design for zero budget and 3-month timeline with 5 hours/week capacity (budget-conscious architecture for operational sustainability)
+:::
+:::
+
+::: {.g-col-4}
+::: {.callout-note title="Data Scientist (Ran Li)"}
+<span style="font-weight:bold; color:#1976d2;">Ran Li</span>
+
+- Implemented data preservation
+- Develop R Shiny prototype
+- Developed production application and iterated with stakeholders
+:::
+:::
+
+:::
+
+## Technical Journey
+
+### Phase 1: Tech Stack Design (March 2025)
+
+- Data preservation infrastructure (Zenodo integration)
+- Dashboard rapid prototyping with R Shiny (reuses Data Engineers code) but makes dynamic
+- Dashboard production requirements: no cold starts so serverless SSG with highly modern UI and visualizations: Next.js SSG
+- Production deployment given zero operating cost: GitHub Pages static site
+
+### Phase 2: R Shiny Prototype (March-April 2025)
+
+Rapid prototype for concept validation:
+
+- Core interactions: dropdown selection, synchronized visualizations
+- District highlighting and hover effects
+- Stakeholder feedback integration
+
+### Phase 3: Next.js Production (May-June 2025)
+
+Production rebuild optimized for budget and operational constraints:
+
+**Frontend Architecture:**
+
+- Next.js/React.js with Highcharts.js
+- Static site generation for cost-effective hosting
+
+**Key Features:**
+
+- Synchronized bar charts and choropleth maps
+- Custom Heat Vulnerability Index visualization
+- Interactive district selection with highlighting
+- Embedded documentation and metadata
+
+**Production Infrastructure:**
+
+- **Deployment**: GitHub Pages static hosting (budget-optimized)
+- **Data Preservation**: Zenodo integration for DOI/citation
+- **Analytics**: Google Analytics tracking
+- **SEO**: Search optimization for discoverability
+
+### Technical Highlights
+
+- Client-side rendering for serverless architecture
+- Custom data pipeline from R to web-ready formats
+- Production deployment designed for minimal operational overhead
+
+## Impact
+
+Transforms Philadelphia health data into actionable policy insights through accessible, district-organized visualizations.

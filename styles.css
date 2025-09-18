@@ -1,1 +1,6 @@
+/* Custom gray callout for Data Engineers */
+.callout.custom-gray {
+	--callout-color: #f5f5f5 !important;
+	--callout-border-color: #bdbdbd !important;
+}
 /* css styles */
