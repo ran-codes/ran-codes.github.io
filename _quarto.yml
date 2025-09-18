@@ -20,14 +20,19 @@ website:
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/ran-li-6b722718/
+        target: _blank
       - icon: github
         href: https://github.com/ran-codes
+        target: _blank
       - text: "{{< iconify fa6-brands:bluesky >}}"
         href: https://bsky.app/profile/ran-li.bsky.social
+        target: _blank
       - icon: twitter
         href: https://x.com/ran_codes      
+        target: _blank
       - icon: medium
         href: https://medium.com/@ranli2011
+        target: _blank
 format:
   html:
     theme: cosmo
