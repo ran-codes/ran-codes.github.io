@@ -26,30 +26,39 @@ This deliverable is an interactive dashboard visualizing health determinants acr
 ::: {.grid}
 
 ::: {.g-col-4}
-::: {.callout-note .custom-gray title="Data Engineers"}
-Tamara Rushovich, Amber Bolli
+:::{.goals}
+::::{.goals-header}
+Data Engineer (Others)
+::::
+::::{.goals-container}
 
-- Aggregated census tract data to council district level
-- Created static visualizations with R/ggplot2
-- Provided text content and mockup of dashboard layout
+
+- Developed Data Bundle
+- Created static visualizations
+- Provided text and mockup 
+::::
 :::
 :::
 
 ::: {.g-col-4}
 ::: {.callout-note title="Data Architect (Ran Li)"}
-<span style="font-weight:bold; color:#1976d2;">Ran Li</span>
 
-- Tech stack design for zero budget and 3-month timeline with 5 hours/week capacity (budget-conscious architecture for operational sustainability)
+- Tech stack design for operational limits:
+    - 3-month timeline 
+    - 5 hours/week capacity 
+    - zero infrastructure costs 
+    
 :::
 :::
 
 ::: {.g-col-4}
 ::: {.callout-note title="Data Scientist (Ran Li)"}
-<span style="font-weight:bold; color:#1976d2;">Ran Li</span>
 
-- Implemented data preservation
-- Develop R Shiny prototype
-- Developed production application and iterated with stakeholders
+
+- Develop  prototype (R Shiny)
+- Develop production application (Next.js)
+- Deploy production application (GH pages)
+- Deployed data preservation (Zenodo)
 :::
 :::
 
