@@ -4,14 +4,14 @@
     "href": "portfolio.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Test\n\n\n\n\n\n\nRan Li\n\n\n\n\n\n\nNo matching items"
+    "text": "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App\n\n\n\nDashboard\n\nR Shiny\n\nNext.js\n\nReact.js\n\nHighcharts.js\n\n\n\n\n\n\n\nRan Li\n\n\nSep 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Ran Li",
     "section": "",
-    "text": "Ran Li is a software engineer with 5+ years of experience spanning data architecture, data engineering, analytics engineering, cross-domain data integration, BI/dashboard development, front-end development, and serverless backend architecture.\nI believe in agile, integrated solutions tailored to stakeholders’ specific problems and implementing software-first approaches that are lightweight, scalable, and AI-compatible."
+    "text": "I am a software engineer with 5+ years of experience spanning data architecture, data engineering, analytics engineering, cross-domain data integration, BI/dashboard development, front-end development, and serverless backend architecture.\nI believe in agile, integrated solutions tailored to stakeholders’ specific problems and implementing software-first approaches that are lightweight, scalable, and AI-compatible."
   },
   {
     "objectID": "blog/2025-09-09-duckdb-wasm-proof-of-concept/index.html",
@@ -28,10 +28,31 @@
     "text": "Proof of Concept: Client-side Serverless DuckDB query of cloud bucket storages\n\n\n\nserverless\n\ndata-engineering\n\nwasm\n\nduckdb\n\nanalytics\n\nsql\n\nparquet\n\n\n\n\n\n\n\n\n\nSep 9, 2025\n\n\nRan Li\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "portfolio/test-1/index.html",
-    "href": "portfolio/test-1/index.html",
-    "title": "Test",
+    "objectID": "portfolio/2025-09-01-phl-city-health-dashboard/index.html",
+    "href": "portfolio/2025-09-01-phl-city-health-dashboard/index.html",
+    "title": "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App",
     "section": "",
-    "text": "Test"
+    "text": "Click the Image to get to the dashboard at https://drexel-uhc.github.io/philadelphia-council-districts-and-health"
+  },
+  {
+    "objectID": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#context",
+    "href": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#context",
+    "title": "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App",
+    "section": "Context",
+    "text": "Context\n\nProject\nPhiladelphia health disparities aren’t connected to political geography, leaving council members without district-level insights for policy decisions.\nThis deliverable is an interactive dashboard visualizing health determinants across 10 council districts, making public health data actionable for policy makers and citizens.\n\n\nTeam Structure\n\n\n\n\nData Engineer (Others)\n\n\n\nDeveloped Data Bundle\nCreated static visualizations\nProvided text and mockup\n\n\n\n\n\n\n\n\n\n\n\nNoteData Architect (Ran Li)\n\n\n\n\nTech stack design for operational limits:\n\n3-month timeline\n5 hours/week capacity\nzero infrastructure costs\n\n\n\n\n\n\n\n\n\n\n\n\nNoteData Scientist (Ran Li)\n\n\n\n\nDeveloped prototype (R Shiny)\nDeveloped production application (Next.js)\nDeployed production application (GitHub Pages)\nDeployed data preservation (Zenodo)"
+  },
+  {
+    "objectID": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#phases",
+    "href": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#phases",
+    "title": "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App",
+    "section": "Phases",
+    "text": "Phases\n\nPhase 1: Tech Stack Design (March 2025)\nOperational Constraints:\n\nZero budget for infrastructure costs\n3-month delivery timeline\n5 hours/week development capacity\nNo ongoing maintenance resources\n\nArchitecture Decisions:\n\nData Preservation: Zenodo integration for DOI/citation (free, permanent hosting)\nPrototyping: R Shiny to reuse Data Engineers’ code but make it dynamic\nProduction Requirements: No cold starts needed → serverless SSG with modern UI\nFrontend: Next.js SSG for zero-cost hosting and instant loading\nDeployment: GitHub Pages static site (free, reliable)\nAnalytics: Google Analytics for usage tracking (free)\nPerformance: Client-side rendering for serverless architecture\nData Pipeline: Custom R-to-web transformation (leverages existing analysis)\nSEO: Search optimization for discoverability\n\n\n\nPhase 2: R Shiny Prototype (March-April 2025)\nRapid prototype for concept validation:\n\nCore interactions: dropdown selection, synchronized visualizations\nDistrict highlighting and hover effects\nStakeholder feedback integration\n\n\n\nPhase 3: Next.js Production (May-June 2025)\nProduction rebuild optimized for budget and operational constraints:\nFrontend Architecture:\n\nNext.js/React.js with Highcharts.js\nStatic site generation for cost-effective hosting\n\nKey Features:\n\nSynchronized bar charts and choropleth maps\nCustom Heat Vulnerability Index visualization\nInteractive district selection with highlighting\nEmbedded documentation and metadata\n\nProduction Infrastructure:\n\nEmbedded documentation and metadata\n\n\n\nTechnical Highlights\n\nSynchronized bar charts and choropleth maps\nCustom Heat Vulnerability Index visualization\nInteractive district selection with highlighting"
+  },
+  {
+    "objectID": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#reflections",
+    "href": "portfolio/2025-09-01-phl-city-health-dashboard/index.html#reflections",
+    "title": "Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App",
+    "section": "Reflections",
+    "text": "Reflections\n\nThings I really enjoyed\nLightweight tech stacks like these bring me great joy. You can leverage mature and developer-friendly open-science/open-source infrastructure such as GitHub Pages, Zenodo, and fully serverless application frameworks like SSG Next.js. This removes so much maintenance and operational work you have to do to maintain a deliverable and allows you to free up the time to focus on what is important: the UI of the final product and having a deep understanding of the stakeholders’ true needs.\n\n\nThings to improve next time\n\nA quick turnaround like this meant we did a one-off type of architecture\nIf this project continues, we will add interfaces for stakeholders to update data and modify metadata"
   }
 ]

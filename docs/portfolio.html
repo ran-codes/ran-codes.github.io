@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -175,7 +175,7 @@ window.Quarto = {
 <span class="menu-text">Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resume.pdf"> 
+    <a class="nav-link" href="./resume.pdf" target="_blank"> 
 <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
@@ -233,7 +233,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGFzaGJvYXJk">Dashboard <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SGlnaGNoYXJ0cy5qcw==">Highcharts.js <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TmV4dC5qcw==">Next.js <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UiUyMFNoaW55">R Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UmVhY3QuanM=">React.js <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -247,20 +247,38 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1758216131013" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./portfolio/test-1/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="RGFzaGJvYXJkJTJDUiUyMFNoaW55JTJDTmV4dC5qcyUyQ1JlYWN0LmpzJTJDSGlnaGNoYXJ0cy5qcw==" data-listing-date-sort="1756699200000" data-listing-file-modified-sort="1758225387986" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="440">
+<a href="./portfolio/2025-09-01-phl-city-health-dashboard/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top">
+<img loading="lazy" src="./portfolio/2025-09-01-phl-city-health-dashboard/image.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Test
+Philadelphia City Council Health Dashboard: From Shiny Prototype to Serverless Production App
 </h5>
-<div class="card-text listing-description delink">
-Test
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGFzaGJvYXJk'); return false;">Dashboard</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UiUyMFNoaW55'); return false;">R Shiny</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TmV4dC5qcw=='); return false;">Next.js</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('UmVhY3QuanM='); return false;">React.js</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('SGlnaGNoYXJ0cy5qcw=='); return false;">Highcharts.js</div>
+
 </div>
-<div class="card-attribution card-text-small start">
+<div class="card-text listing-description delink">
+Philadelphia health disparities aren’t connected to political geography, leaving council members without district-level insights for policy decisions.
+</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Ran Li
+</div>
+<div class="listing-date">
+Sep 1, 2025
 </div>
 </div>
 </div>
