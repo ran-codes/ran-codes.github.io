@@ -25,3 +25,8 @@
 ### Posts
 
 This is the blog posts folder. Each post is a separate `.qmd` file. The folder naming convention is `YYYY-MM-DD-title.qmd`.
+
+
+### Resume
+
+This is currently dated to 2025-09-18 version.
