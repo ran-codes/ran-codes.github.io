@@ -15,8 +15,8 @@ website:
         href: blog.qmd
       - text: "Portfolio"
         href: portfolio.qmd      
-      - text: "CV"
-        href: cv.pdf
+      - text: "Resume"
+        href: resume.pdf
       - text: "About"
         href: about.qmd
     right:
